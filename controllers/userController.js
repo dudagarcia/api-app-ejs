@@ -94,4 +94,20 @@ module.exports = {
             return console.err('erro na exclusao', err);
         }
     },
+    async updateemailcode(req, res){
+        try{
+            let response = await User.update({
+                emailCode: req.body.emailCode
+            },
+            {
+                where:{
+                    id: req.params.id
+                }
+            });
+            res.send(response);
+        }
+        catch(err){
+            return console.err('erro ao salvar codigo', err);
+        }
+    },
 }
