@@ -62,7 +62,7 @@ module.exports = {
             res.send(response);
         }
         catch(err){
-            return res.json({msg: 'usuario alterado'}, err);
+            return res.json({msg: 'senha alterada'}, err);
         }
     },
     async updateadmin(req, res){
@@ -78,7 +78,7 @@ module.exports = {
             res.send(response);
         }
         catch(err){
-            return res.json({msg: 'usuario alterado'}, err);
+            return res.json({msg: 'estado do admin alterado'}, err);
         }
     },
     async delete(req, res){

@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     emailCode: DataTypes.BIGINT(6),
     admin: DataTypes.BOOLEAN, 
     createdAt: DataTypes.DATE,
-    updateAt: DataTypes.DATE
+    updatedAt: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'User',
