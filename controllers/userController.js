@@ -91,7 +91,7 @@ module.exports = {
             return res.json({msg: 'usuario excluido'});
         }
         catch(err){
-            return console.err('erro na exclusao', err);
+            return console.err('erro na exclusao do user', err);
         }
     },
     async updateemailcode(req, res){
@@ -110,4 +110,27 @@ module.exports = {
             return console.err('erro ao salvar codigo', err);
         }
     },
+    async listSome (req, res){
+        try{
+            const users = await User.findAll({
+                where:{
+                    section: req.params.section
+                }
+            });
+            return res.json(users);
+        }
+        catch(err){
+            console.error('listSome user error', err);
+        }
+    },
+    async listAll (req,res){
+        try{
+            const users = await User.findAll()
+            return res.json(users);
+        }
+        catch(err){
+            console.error('listAll user error', err);
+        }
+    },
+    
 }
